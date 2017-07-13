@@ -38,10 +38,6 @@
     }
 });
 
-ReactDOM.render(
-    <CommentBox url="/comments" submitUrl="/comments/new" pollInterval={2000} />,
-    document.getElementById('content')
-);
 
 var CommentList = React.createClass({
     render: function () {
@@ -125,3 +121,8 @@ var data = [
     { Id: 2, Author: "Pete Hunt", Text: "This is one comment" },
     { Id: 3, Author: "Jordan Walke", Text: "This is *another* comment" }
 ];
+
+ReactDOM.render(
+    <CommentBox url="/comments" submitUrl="/comments/new" pollInterval={2000} />,
+    document.getElementById('content')
+);
