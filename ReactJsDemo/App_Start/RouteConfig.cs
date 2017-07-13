@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 
-namespace ReactJsDemo
+namespace ReactDemo
 {
     public class RouteConfig
     {
@@ -14,9 +14,21 @@ namespace ReactJsDemo
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
+                name: "Comments",
+                url: "comments",
+                defaults: new { controller = "Home", action = "Comments" }
+            );
+
+            routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+            );
+
+            routes.MapRoute(
+                name: "NewComment",
+                url: "comments/new",
+                defaults: new { controller = "Home", action = "AddComment" }
             );
         }
     }
